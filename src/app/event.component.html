@@ -1,0 +1,36 @@
+
+<div>
+	<h3>{{title}}</h3>
+	<app-table-render [events]='events'></app-table-render>
+</div>
+<div>
+	
+	<br>
+	<h3>{{create_event}}</h3>
+	<form [formGroup]="eventForm" (submit)="onEventFormSubmit()">
+	  <table>
+	    <tr><td>Enter id: </td><td>
+	    	<input formControlName="id"   class="form-control" id="id" required>
+	    		
+	    	</td>
+	    </tr>
+	    <tr><td>Enter Event name: </td><td>
+	    	<input formControlName="name">
+		       
+	    	</td>
+	    </tr>
+	    <tr><td>Enter Event owner name: </td><td>
+	    	<input formControlName="eventOwner">
+	    	</td>
+	    </tr>
+	    	
+	    <tr><td colspan="2">
+		    <button type="submit" [disabled]="!eventForm.valid">CREATE</button>  
+		   
+	    </td></tr>
+	  </table>
+ 	</form>
+ 	<br>
+ 	<div></div>
+
+</div>
